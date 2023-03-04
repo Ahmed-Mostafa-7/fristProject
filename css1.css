@@ -1,0 +1,1208 @@
+:root{
+    --main-color:#19c8fa;
+    --transparent-color: rgb(29 207 255 / 0.7)
+  }
+  /* start global rules */
+  *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    font-weight: 500;
+    font-family: 'Cairo', sans-serif;
+  font-family: 'Jomhuria', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Tajawal', sans-serif;
+  }
+  
+  ul{
+    list-style: none;
+  }
+  
+  .container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 97px;
+  }
+  
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+  /* end global rules */
+  /* start componant */
+  .main-haeding{
+    padding: 100px;
+  }
+  
+  .main-haeding h2{
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 70px;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  .main-haeding .p1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .main-haeding h2::after{
+    content: "";
+    width: 130px;
+    height: 2px;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .main-haeding h2::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    left: 50%;
+    bottom: -35px;
+    z-index: 2;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  /* end componant */
+  
+  /* start header */
+  header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+  }
+  
+  header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  header .container::after{
+    content: "";
+    width: calc(100% - 30px);
+    height: 1px;
+    background-color: #a2a2a2;
+    position: absolute;
+    left: 15px;
+    bottom: -1px;
+  }
+  
+  header img{
+    width: 60px;
+  }
+  
+  header nav{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  header nav .menue{
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    header nav .menue{
+      display: none;
+    }
+  }
+  
+  header nav ul{
+    display: flex;
+  }
+  
+  @media (max-width: 767px) {
+    header nav ul{
+      display: none;
+    }
+    header nav .menue:hover + ul{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: rgba(0, 0, 0, 30%);
+    }
+    header nav ul li a{
+      padding: 15px !important;
+    }
+  }
+  
+  header nav ul li a{
+    display: block;
+    padding: 40px 10px;
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+  }
+  
+  header nav ul li a:hover{
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+  }
+  
+  header ul .active{
+    color:var(--main-color);
+  }
+  
+  header nav .form{
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
+    position: relative;
+    border-left: 1px solid white;
+  }
+  
+  header nav .form span{
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+  /* end header */
+  /* start landing */
+  .landing{
+    min-height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
+    background-size: cover;
+    position: relative;
+  }
+  
+  .landing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 50%);
+  }
+  
+  .landing .text{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 50%;
+    padding: 40px;
+    background-color: var(--transparent-color);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .landing .text .content{
+    width: 70%;
+  }
+  
+  .landing .text h2{
+    font-size: 30px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  
+  }
+  
+  .landing .text p{
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+  
+  .landing span{
+    color: white !important;
+    font-size: 30px;
+    position: absolute;
+  }
+  
+  .scroll span:first-of-type{
+    right: 5px;
+    top: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .scroll span:last-of-type{
+    top: 50%;
+    left: 50px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .landing span:hover{
+    color: var(--main-color) !important;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+  }
+  
+  .landing .boint .bullet{
+    position: absolute;
+    left: 50%;
+    display: flex;
+    transform: translatex(-50%);
+    bottom: 30px;
+  }
+  
+  .landing .boint .bullet li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+    border: 1px solid #DDD;
+  }
+  
+  .landing .boint .bullet .li{
+    background-color: var(--main-color);
+  }
+  
+  @media (max-width: 767px){
+    .landing .text h2{
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+    .landing .text p{
+      letter-spacing: 0.75px;
+      font-size: 12px;
+      text-align: center;
+    }
+  
+    .landing .text .content{
+      width: 100%;
+    }
+  
+    .landing .text{
+      width: 100%;
+    }
+    .landing .scroll span{
+      display: none;
+    }
+  }
+  /* end landing */
+  /* start section servise */
+  .icon-text{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    column-gap: 60px;
+    row-gap: 60px;
+  }
+  
+  .icon-text h3{
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .icon-text p{
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .icon-text span{
+    display: flex;
+    justify-content: center;
+    color: var(--transparent-color);
+    font-size: 50px;
+  }
+  
+  @media (max-width: 767px){
+    .icon-text{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .icon-text h3{
+      color: var(--main-color);
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .main-haeding{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  
+  .section2{
+    background-color: black;
+    color: white;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .section2 .side-text{
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--transparent-color);
+    min-width: 50%;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .section2 .side-text ul h3{
+    margin-bottom: 30px;
+  }
+  
+  .section2 .side-text ul li{
+    margin-bottom: 10px;
+    margin-left: 30px;
+  }
+  
+  .section2 .side-text ul li span{
+    position: absolute;
+    left: 30px;
+  }
+  
+  .imeg img{
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+  }
+  
+  @media (max-width: 630px){
+    .section2 .side-text ul h3{
+      margin-bottom: 30px;
+    }
+    .section2 .side-text ul li{
+      margin-bottom: 10px;
+    }
+    .section2 .side-text{
+      width: 100%;
+    }
+    .imeg img{
+      position: absolute;
+      width: 135px;
+      /* right: -144px; */
+      top: 57px;
+      left: 65px;
+      height: 300px;
+    }
+    .imeg{
+      position: absolute;
+      right: 200px;
+    }
+  }
+  /* end section servise */
+  /* start section portfolio */
+  .collection{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  
+  .collection div{
+    transition: .5s;
+    -webkit-transition: .5s;
+    font-size: 30px;
+    font-weight: 800;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+  }
+  
+  .collection div:hover{
+    color: var(--main-color);
+  }
+  
+  
+  @media (max-width: 767px){
+    .collection div{
+      font-size: 23px !important;
+      
+    }
+  }
+  
+  .imegs-collection{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    background-color: black;
+  }
+  
+  .imegs-collection img{
+    height: 300px;
+  }
+  
+  @media (max-width: 791px){
+    .imegs-collection img{
+      display: none;
+    }
+    .imegs-collection{
+      display: none ;
+    }
+  }
+  /* end section portfolio */
+  /* vodeo section  */
+  .video{
+    position: relative;
+    /* width: 100%;
+    height: 420px;
+    margin-bottom: 100px; */
+  }
+  .video video{
+    width: 100%;
+  }
+    
+  .text-vid{
+    background-color: var(--transparent-color);
+    width: 100%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    padding: 50px;
+    transform: translateY(-50%);
+    text-align: center;
+    
+  }
+  
+  @media (max-width: 667px){
+    .text-vid{
+      padding: 0;
+    }
+    
+    .text-vid h2{
+      font-size: 25px;
+    }
+  
+    .text-vid p{
+      font-size: 20px;
+    }
+  
+    .text-vid button{
+      margin-bottom: 5px;
+    }
+  }
+  
+  .text-vid h2{
+    margin-bottom: 20px;
+    /* font-size: 40px; */
+    font-weight: normal;
+  }
+  
+  .text-vid p{
+    /* font-size: 25px; */
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  
+  .text-vid button{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+  }
+  /* vodeo section  */
+  /* statistics section  */
+  .static{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/440/217/250/skull-and-bones-2018-video-game-wallpaper-thumb.jpg);
+  }
+  
+  .static .statics-container{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    background-color: var(--transparent-color);
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+  }
+  
+  .static .statics-container .box{
+    text-align: center;
+  }
+  
+  .static .statics-container .box .span span{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  
+  
+  .static .statics-container .box .number{
+    font-size: 33px;
+    font-weight: 700;
+  }
+  
+  .static .statics-container .box p{
+    font-size: 15px;
+    font-weight: 500;
+  }
+  /* statistics section  */
+  /* skills section  */
+  .our-skills{
+    padding: 100px;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+  }
+  
+  .test-skills{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .skills{
+    padding: 0 20px;
+  }
+  
+  .skills p{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .skills h2{
+    text-align: center;
+  }
+  
+  .test-skills p{
+    margin-bottom: 50px;
+  }
+  
+  .info-profile img{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+  
+  .info-profile p{
+    text-align: left;
+  }
+  
+  .info-profile{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info-profile p::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #777;
+    margin-top: 20px;
+  }
+  
+  .skills .graph .div1::after {
+    content: '80%';
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    height: 35px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right , var(--main-color) 80% , #eee 80% , #eee 100%);
+  }
+  
+  .skills .graph .div2::after {
+    content: '70%';
+    width: 100%;
+    display: block;
+    height: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right , var(--main-color) 70% , #eee 70% , #eee 100%);
+  }
+  
+  .skills .graph .div3::after {
+    content: '91%';
+    width: 100%;
+    height: 35px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right , var(--main-color) 91% , #eee 91% , #eee 100%);
+  }
+  
+  .skills .graph .div4::after {
+    content: '84%';
+    width: 100%;
+    font-weight: 700;
+    display: block;
+    height: 35px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right , var(--main-color) 84% , #eee 84% , #eee 100%);
+  }
+  
+  .test{
+    position: relative;
+  }
+  
+  .test .bullet{
+    position: absolute;
+    left: 50%;
+    top: 92%;
+    display: flex;
+    transform: translatex(-50%);
+    bottom: 30px;
+  }
+  
+  .test .bullet li{
+    width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 5px;
+      border: 1px solid #DDD;
+  }
+  
+  .test .bullet .li{
+    background: var(--main-color);
+      border: none;
+  }
+  
+  @media (max-width: 767px){
+    .our-skills{
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .graph div::after{
+      height: 15px;
+    }
+    .static .statics-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background-color: var(--transparent-color);
+      color: rgb(255, 255, 255);
+      padding: 30px 5px;
+      padding-top: 30px;
+      padding-right: 5px;
+      padding-bottom: 30px;
+      padding-left: 5px;
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      transform: translateX(-50%);
+  }
+  .text-photo .text {
+    top: 30% !important;
+  }
+  .text-photo {
+    height: 235px !important;
+  }
+  .text-photo .text p:first-child{
+    font-size: medium !important;
+  }
+  .text-photo .text p:last-child{
+    margin-left: 140px !important;
+  }
+  
+  }
+    /* skills section  */
+  
+  .text-photo{
+    background-size: cover;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/615/900/842/city-digital-light-design-wallpaper-thumb.jpg);
+  }
+  
+  .text-photo .text p:first-child{
+    font-size: 30px;
+  }
+  
+  .text-photo .text p:last-child{
+    margin-left: 400px;
+  }
+  
+  .text-photo .text{
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 50%);
+  }
+  
+  /* PRICING SECTION  */
+  .pricing-container{
+    display: grid;
+    grid-template-columns: repeat(4 , 20%);
+    column-gap: calc(20% / 3);
+    text-align: center;
+  }
+  
+  .contact-face{
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+  }
+  
+  .contact-face span{
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .contact-face a{
+    position: absolute;
+    margin-top: 70px;
+    background-color: var(--main-color);
+    color: white;
+    padding: 5px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    left: 50%;
+    border-radius: 5%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    -o-border-radius: 5%;
+  }
+  
+  .pacige .sale{
+    font-size: 22px;
+    font-weight: 700;
+  }
+  
+  .pricing-container .pacige .span{
+    position: relative;
+  }
+  
+  .pricing-container .pacige .span::before{
+    content: "$";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -12px;
+    font-size: large;
+    font-weight: 300;
+  }
+  
+  .pacige div{
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .pacige div:last-child{
+    margin-top: 30px;
+  }
+  
+  .pricing-container .pacige .feature1{
+    margin-top: 20px;
+  }
+  
+  .pricing-container .pacige .feature1:after{
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+  }
+  .pricing-container .pacige .feature2:after{
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+  }
+  .pricing-container .pacige .feature3:after{
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+  }
+  .pricing-container .pacige .feature4:after{
+    content: "";
+    width: 110% ;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -5px;
+    left: -7px ;
+  }
+  
+  .pricing-container .pacige .bacige::after{
+    content: "";
+    width: 110% ;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -8px;
+    left: -7px ;
+  }
+  
+  .pricing-container .pacige .bacige::before{
+    content: "";
+    width: 110% ;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: -8px;
+    left: -7px ;
+  }
+  
+  .pacige div button{
+    background-color: white;
+    border: 1px solid var(--main-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+  }
+  
+  .pacige div button:hover{
+    background-color: var(--main-color);
+    color: white;
+  }
+  
+  .subscrib{
+    position: relative;
+    margin-top: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/750/664/987/night-starry-stars-milky-way-wallpaper-preview.jpg);
+    background-size: cover;
+  }
+  
+  .subscrib::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+  }
+  
+  .subscrib .container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: white;
+  }
+  
+  @media (max-width: 991px){
+    .subscrib .container{
+      flex-direction: column;
+    }
+  
+  }
+  
+  .subscrib form{
+    display: flex;
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+  }
+  
+  .subscrib form span{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    left: 25px;
+  }
+  
+  .subscrib form input[type="email"]{
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 20px 20px 20px 60px;
+    color: white;
+    caret-color: var(--main-color);
+    width: calc(100% - 130px);
+    border-right: none;
+  }
+  
+  .subscrib form input[type="submit"]{
+    width: 130px;
+    background-color: var(--main-color);
+    color: white;
+    border: 1px solid white;
+    text-transform: uppercase;
+    border-left: none;
+    margin-right: 10px;
+  }
+  
+  .subscrib form::placeholder{
+    color: white;
+  }
+  
+  .subscrib form:focus-visible{
+    
+  }
+  /* PRICING SECTION  */
+  /* CONTACT SECTION  */
+  .form{
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+  
+  .form FORM{
+    display: grid;
+    row-gap: 50px;
+    position: relative;
+    margin-bottom: 300px;
+  }
+  
+  .form FORM .main-input{
+    width: 90%;
+    padding: 10px 20px;
+  }
+  
+  .form FORM textarea{
+    height: 150px;
+  }
+  
+  .form FORM input[type="submit"]{
+    width: 30%;
+    padding: 10px 20px;
+    position: absolute;
+    border: none;
+    right: 10%;
+    background-color: var(--main-color);
+    color: white;
+    bottom: -70px;
+  }
+  
+  .info {
+    display: grid;
+    row-gap: 10px;
+    font-weight: 600;
+    height: 330px;
+  }
+  @media (max-width: 800px){
+    .form FORM input[type="submit"]{
+      width: 60%;
+    }
+    .form{
+      column-gap: 10px;
+    }
+  }
+  /* CONTACT SECTION  */
+  /* footer SECTION  */
+  .footer{
+    position: relative;
+    margin-top: 100px;
+    padding-top: 60px;
+    padding-bottom: 160px;
+    background-size: cover;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/760/955/638/artwork-landscape-sky-mountains-wallpaper-thumb.jpg);
+    color: white;
+  }
+  
+  .footer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+  }
+  
+  .footer .logo-footer img{
+    width: 100px;
+    margin: 15px 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .footer .we{
+    font-weight: 700;
+    margin-top: 60px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .footer .we::after{
+    content: "";
+    width: 130px;
+    height: 2px;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  
+  .footer .social-media{
+    display: flex;
+    justify-content: space-between;
+    width: 16%;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    top: 160px;
+  }
+  
+  .footer .social-media a{
+    color: var(--main-color);
+  }
+  
+  .footer .foot p{
+    position: absolute;
+    top: 195px;
+    font-weight: 800;
+    left: 50%;
+    width: 35%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    letter-spacing: 2px;
+  }
+  
+  .footer .foot span{
+    color: var(--main-color);
+  }
+  
+  @media (max-width: 767px){
+    .footer .social-media{
+    width: 30%;
+    }
+    .footer .foot p{
+      width: 75%;
+      letter-spacing: normal;
+    }
+    .contact-face span{
+      width: 70%;
+      font-size: 15px;
+    }
+    .video{
+      background-size: cover;
+      background-image: url(https://c4.wallpaperflare.com/wallpaper/428/985/301/sea-night-stars-milky-way-wallpaper-preview.jpg);
+    }
+  }
